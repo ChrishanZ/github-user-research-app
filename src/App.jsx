@@ -1,9 +1,10 @@
-import Sample from "./components/Sample/Sample";
+import Container from "./components/Container/Container";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <div className="d-flex justify-content-center align-items-center">
-      <Sample />
+    <div className={`d-flex justify-content-center ${styles.app}`}>
+      <Container />
     </div>
   );
 }
