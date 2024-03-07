@@ -1,0 +1,11 @@
+.links {
+  font-size: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px; /* Adjust as needed */
+  color: var(--third);
+  li {
+    text-align: left;
+  }
+}

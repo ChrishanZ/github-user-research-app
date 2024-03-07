@@ -1,0 +1,21 @@
+.stats {
+  gap: 90px;
+  width: 100%;
+  height: 85px;
+  border-radius: 10px;
+  background-color: var(--background-color-light);
+
+  margin-bottom: 37px;
+  .stat {
+    margin-left: 32px;
+    h4 {
+      font-size: 13px;
+      color: var(--second);
+    }
+    h5 {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}
