@@ -6,7 +6,6 @@ import StatsProfile from "../StatsProfile/StatsProfile";
 import LinksProfile from "../LinksProfile/LinksProfile";
 
 function Profile({ data }) {
-  console.log(data);
   const {
     avatar_url,
     login,

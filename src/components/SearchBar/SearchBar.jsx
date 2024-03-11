@@ -33,7 +33,6 @@ function SearchBar({ setData, setIsLoading }) {
           value={user}
           onChange={(e) => {
             setUser(e.target.value);
-            console.log(e.target.value);
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
