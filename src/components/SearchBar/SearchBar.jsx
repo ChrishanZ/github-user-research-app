@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./SearchBar.module.scss";
 import iconSearch from "../../../public/assets/icon-search.svg";
 
-function SearchBar({ setData }) {
+function SearchBar({ setData, setIsLoading }) {
   const [user, setUser] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -12,8 +12,10 @@ function SearchBar({ setData }) {
     axios
       .get(`https://api.github.com/users/${pseudo}`)
       .then((response) => {
+        setIsLoading(true);
         setData(response.data);
         setErrorMessage("");
+        setIsLoading(false);
       })
       .catch((error) => {
         setErrorMessage(error.response.data.message);
