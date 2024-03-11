@@ -1,8 +1,8 @@
 import styles from "./LinksProfile.module.scss";
-import iconLocation from "../../../public/assets/icon-location.svg";
-import iconTwitter from "../../../public/assets/icon-twitter.svg";
-import iconWebsite from "../../../public/assets/icon-website.svg";
-import iconCompany from "../../../public/assets/icon-company.svg";
+import iconLocation from "/assets/icon-location.svg";
+import iconTwitter from "/assets/icon-twitter.svg";
+import iconWebsite from "/assets/icon-website.svg";
+import iconCompany from "/assets/icon-company.svg";
 
 function LinksProfile({ location, twitter_username, blog, company }) {
   return (

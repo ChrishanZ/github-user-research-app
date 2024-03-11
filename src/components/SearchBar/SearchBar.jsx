@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import styles from "./SearchBar.module.scss";
-import iconSearch from "../../../public/assets/icon-search.svg";
+import iconSearch from "/assets/icon-search.svg";
 
 function SearchBar({ setData, setIsLoading }) {
   const [user, setUser] = useState("");
