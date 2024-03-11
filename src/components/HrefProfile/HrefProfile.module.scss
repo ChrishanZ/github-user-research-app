@@ -1,4 +1,10 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .href {
   color: var(--blue);
   text-decoration: none;
+  font-size: 16px;
+  @include mixin.sm-lt {
+    display: none;
+  }
 }

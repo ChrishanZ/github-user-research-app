@@ -24,10 +24,15 @@ function Profile({ data }) {
   return (
     <div className={`d-flex ${styles.profile}`}>
       <div className={styles.image}>
-        <img src={avatar_url} alt="" />
+        <img src={avatar_url} alt="github avatar" />
       </div>
-      <div className={`d-flex flex-fill flex-column ${styles.content}`}>
-        <HeaderProfile login={login} created_at={created_at} />
+      <div className={`d-flex flex-fill flex-column`}>
+        <HeaderProfile
+          login={login}
+          created_at={created_at}
+          avatar_url={avatar_url}
+          html_url={html_url}
+        />
         <HrefProfile login={login} html_url={html_url} />
         <BioProfile bio={bio} />
         <StatsProfile

@@ -1,6 +1,12 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .container {
   width: 730px;
   margin-top: 144px;
+
+  @include mixin.sm-lt {
+    width: 327px;
+  }
 }
 
 .title {

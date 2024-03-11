@@ -1,8 +1,13 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .profile {
   padding: 48px;
   box-shadow: 0px 0px 25px -10px rgba(70, 96, 187, 19.86);
   background-color: var(--white);
   border-radius: 15px;
+  @include mixin.sm-lt {
+    padding: 32px 24px;
+  }
 }
 
 .image {
@@ -11,13 +16,7 @@
   border-radius: 50%;
   margin-right: 37px;
   overflow: hidden;
-}
-
-.content {
-  p {
-    font-size: 15px;
-    color: var(--second);
-    font-weight: 400;
-    margin-bottom: 32px;
+  @include mixin.sm-lt {
+    display: none;
   }
 }

@@ -1,0 +1,13 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.bio {
+  font-size: 15px;
+  color: var(--second);
+  font-weight: 400;
+  margin-bottom: 32px;
+
+  @include mixin.sm-lt {
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+}

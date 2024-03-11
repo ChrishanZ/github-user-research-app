@@ -1,3 +1,5 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .SearchBar {
   margin-bottom: 24px;
   height: 69px;
@@ -35,4 +37,35 @@
 p {
   font-size: 18px;
   color: red;
+}
+
+@include mixin.sm-lt {
+  .SearchBar {
+    height: 60px;
+    margin-bottom: 16px;
+
+    input {
+      width: 57%;
+      font-size: 13px;
+    }
+
+    img {
+      margin-bottom: 24px;
+      margin: 0 12px 0 16px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    ::placeholder {
+      font-size: 13px;
+    }
+    button {
+      height: 46px;
+      width: 74px;
+      padding: 12.5px;
+      font-size: 14px;
+      right: 7px;
+      top: 7.5px;
+    }
+  }
 }

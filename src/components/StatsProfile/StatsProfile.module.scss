@@ -1,3 +1,5 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .stats {
   gap: 90px;
   width: 100%;
@@ -16,6 +18,22 @@
       font-size: 22px;
       font-weight: bold;
       margin: 0;
+    }
+  }
+  @include mixin.sm-lt {
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 24px;
+    .stat {
+      margin-left: 0;
+      h4 {
+        font-weight: 400;
+        font-size: 11px;
+      }
+      h5 {
+        text-align: center;
+        font-size: 16px;
+      }
     }
   }
 }

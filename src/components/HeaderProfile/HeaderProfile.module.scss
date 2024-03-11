@@ -1,3 +1,10 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.container {
+  @include mixin.sm-lt {
+    display: flex;
+  }
+}
 .header {
   h2 {
     font-size: 26px;
@@ -6,5 +13,42 @@
     font-size: 15px;
     font-weight: 400;
     color: var(--second);
+  }
+  .href {
+    display: none;
+  }
+}
+
+@include mixin.sm-lt {
+  .header {
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    h2 {
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 13px;
+    }
+    .href {
+      @include mixin.sm-lt {
+        display: block;
+        color: var(--blue);
+        text-decoration: none;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.image {
+  display: none;
+  @include mixin.sm-lt {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 37px;
+    overflow: hidden;
+    display: block;
   }
 }
