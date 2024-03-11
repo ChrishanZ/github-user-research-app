@@ -1,12 +1,22 @@
 import styles from "./HeaderProfile.module.scss";
 
-function HeaderProfile() {
+function HeaderProfile({ login, created_at }) {
+  const date = new Date(created_at);
+
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+
+  const formattedDate = date.toLocaleDateString("en-US", options);
+
   return (
     <div
       className={`d-flex align-items-center justify-content-spacebetween ${styles.header}`}
     >
-      <h2>The Octocat</h2>
-      <h3>Joined 25 Jan 2011</h3>
+      <h2>{login}</h2>
+      <h3>Joined {formattedDate}</h3>
     </div>
   );
 }

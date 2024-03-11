@@ -1,7 +1,9 @@
-function HrefProfile() {
+import styles from "./HrefProfile.module.scss";
+
+function HrefProfile({ login, html_url }) {
   return (
-    <a href="google.fr" target="_blank">
-      @octocat
+    <a href={html_url} target="_blank" className={styles.href}>
+      {`@${login}`}
     </a>
   );
 }

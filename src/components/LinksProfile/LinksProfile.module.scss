@@ -7,5 +7,11 @@
   color: var(--third);
   li {
     text-align: left;
+    img {
+      margin-right: 18px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
   }
 }

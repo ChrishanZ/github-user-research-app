@@ -5,16 +5,42 @@ import BioProfile from "../BioProfile/BioProfile";
 import StatsProfile from "../StatsProfile/StatsProfile";
 import LinksProfile from "../LinksProfile/LinksProfile";
 
-function Profile() {
+function Profile({ data }) {
+  console.log(data);
+  const {
+    avatar_url,
+    login,
+    created_at,
+    html_url,
+    bio,
+    public_repos,
+    followers,
+    following,
+    location,
+    blog,
+    twitter_username,
+    company,
+  } = data;
   return (
     <div className={`d-flex ${styles.profile}`}>
-      <div className={styles.image}></div>
+      <div className={styles.image}>
+        <img src={avatar_url} alt="" />
+      </div>
       <div className={`d-flex flex-fill flex-column ${styles.content}`}>
-        <HeaderProfile />
-        <HrefProfile />
-        <BioProfile />
-        <StatsProfile />
-        <LinksProfile />
+        <HeaderProfile login={login} created_at={created_at} />
+        <HrefProfile login={login} html_url={html_url} />
+        <BioProfile bio={bio} />
+        <StatsProfile
+          public_repos={public_repos}
+          followers={followers}
+          following={following}
+        />
+        <LinksProfile
+          location={location}
+          blog={blog}
+          twitter_username={twitter_username}
+          company={company}
+        />
       </div>
     </div>
   );

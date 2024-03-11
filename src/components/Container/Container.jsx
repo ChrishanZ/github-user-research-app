@@ -13,7 +13,7 @@ function Container() {
         <h1>devfinder</h1>
       </div>
       <SearchBar data={data} setData={setData} />
-      <Profile data={data} />
+      {data && <Profile data={data} />}
     </div>
   );
 }
