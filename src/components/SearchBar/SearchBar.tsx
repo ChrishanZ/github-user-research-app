@@ -1,14 +1,35 @@
-import { useState } from "react";
+import { useState, SetStateAction, Dispatch } from "react";
 import axios from "axios";
 
 import styles from "./SearchBar.module.scss";
 import iconSearch from "/assets/icon-search.svg";
 
-function SearchBar({ setData, setIsLoading }) {
+interface IData {
+  avatar_url: string;
+  login: string;
+  created_at: string;
+  html_url: string;
+  bio: string;
+  public_repos: number;
+  followers: number;
+  following: number;
+  location: string;
+  blog: string;
+  twitter_username: string;
+  company: string;
+}
+
+function SearchBar({
+  setData,
+  setIsLoading,
+}: {
+  setData: Dispatch<SetStateAction<IData | null>>;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
+}) {
   const [user, setUser] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const searchUser = (pseudo) => {
+  const searchUser = (pseudo: string) => {
     axios
       .get(`https://api.github.com/users/${pseudo}`)
       .then((response) => {

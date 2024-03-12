@@ -1,9 +1,25 @@
 import styles from "./HeaderProfile.module.scss";
 
-function HeaderProfile({ login, created_at, avatar_url, html_url }) {
+interface IOption {
+  day?: "numeric" | undefined;
+  month?: "long" | undefined;
+  year?: "numeric" | undefined;
+}
+
+function HeaderProfile({
+  login,
+  created_at,
+  avatar_url,
+  html_url,
+}: {
+  login: string;
+  created_at: string;
+  avatar_url: string;
+  html_url: string;
+}) {
   const date = new Date(created_at);
 
-  const options = {
+  const options: IOption = {
     day: "numeric",
     month: "long",
     year: "numeric",

@@ -5,7 +5,24 @@ import BioProfile from "../BioProfile/BioProfile";
 import StatsProfile from "../StatsProfile/StatsProfile";
 import LinksProfile from "../LinksProfile/LinksProfile";
 
-function Profile({ data }) {
+interface IData {
+  data: {
+    avatar_url: string;
+    login: string;
+    created_at: string;
+    html_url: string;
+    bio: string;
+    public_repos: number;
+    followers: number;
+    following: number;
+    location: string;
+    blog: string;
+    twitter_username: string;
+    company: string;
+  };
+}
+
+function Profile({ data }: IData) {
   const {
     avatar_url,
     login,

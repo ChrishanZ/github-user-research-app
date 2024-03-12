@@ -1,6 +1,14 @@
 import styles from "./StatsProfile.module.scss";
 
-function StatsProfile({ public_repos, followers, following }) {
+function StatsProfile({
+  public_repos,
+  followers,
+  following,
+}: {
+  public_repos: number;
+  followers: number;
+  following: number;
+}) {
   return (
     <div className={`d-flex align-items-center ${styles.stats}`}>
       <div className={styles.stat}>

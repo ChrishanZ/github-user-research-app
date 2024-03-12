@@ -4,7 +4,17 @@ import iconTwitter from "/assets/icon-twitter.svg";
 import iconWebsite from "/assets/icon-website.svg";
 import iconCompany from "/assets/icon-company.svg";
 
-function LinksProfile({ location, twitter_username, blog, company }) {
+function LinksProfile({
+  location,
+  twitter_username,
+  blog,
+  company,
+}: {
+  location: string;
+  twitter_username: string;
+  blog: string;
+  company: string;
+}) {
   return (
     <ul className={styles.links}>
       <li className="d-flex align-items-center">
