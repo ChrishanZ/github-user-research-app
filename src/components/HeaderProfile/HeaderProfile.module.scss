@@ -6,13 +6,14 @@
   }
 }
 .header {
+  color: var(--text-color-title);
   h2 {
     font-size: 26px;
   }
   h3 {
     font-size: 15px;
     font-weight: 400;
-    color: var(--second);
+    color: var(--date);
   }
   .href {
     display: none;

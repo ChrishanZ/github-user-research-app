@@ -3,17 +3,41 @@
 .container {
   width: 730px;
   margin-top: 144px;
+  margin-bottom: 40px;
 
   @include mixin.sm-lt {
     width: 327px;
+    margin-top: 31px;
+    margin-bottom: 31px;
   }
 }
 
 .title {
   margin-bottom: 36px;
+  position: relative;
   h1 {
     font-size: 26px;
     font-weight: bold;
+    color: var(--text-color-title);
+  }
+  .colormode {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-theme);
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      margin-left: 16px;
+    }
   }
 }
 

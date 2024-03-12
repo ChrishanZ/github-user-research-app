@@ -3,17 +3,19 @@
 .SearchBar {
   margin-bottom: 24px;
   height: 69px;
-  background-color: var(--white);
+  background-color: var(--background-color-inside);
   border-radius: 15px;
   position: relative;
 
-  box-shadow: 0px 0px 25px -10px rgba(70, 96, 187, 19.86);
+  box-shadow: var(--box-shadow);
+
   img {
     margin: 0 32px 0;
   }
   input {
     all: unset;
     width: 70%;
+    color: var(--input);
   }
   button {
     position: absolute;
@@ -58,6 +60,7 @@ p {
     }
     ::placeholder {
       font-size: 13px;
+      color: var(--placeholder);
     }
     button {
       height: 46px;

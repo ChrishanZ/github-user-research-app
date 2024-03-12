@@ -1,8 +1,37 @@
 :root {
+  --font-family: "Space Mono", sans-serif;
+}
+
+.light-mode {
   --blue: #0079ff;
   --second: #697c9a;
-  --third: #4b6a9b;
   --white: #ffffff;
-  --background-color-light: #f6f8ff;
-  --font-family: "Space Mono", sans-serif;
+  --text-color-title: #222731;
+  --placeholder: #4b6a9b;
+  --date: #697c9a;
+  --input: #222731;
+  --bio: #4b6a9b;
+  --stats: #4b6a9b;
+  --background-color: #f6f8ff;
+  --background-color-inside: #fefefe;
+  --box-shadow: 0px 0px 25px -10px rgba(70, 96, 187, 19.86);
+  --icons: #4b6a9b;
+  --text-theme: #697c9a;
+}
+
+.dark-mode {
+  --blue: #0079ff;
+  --second: #697c9a;
+  --white: #ffffff;
+  --text-color-title: #ffffff;
+  --placeholder: #ffffff;
+  --date: #ffffff;
+  --input: #ffffff;
+  --bio: #ffffff;
+  --stats: #ffffff;
+  --background-color: #141d2f;
+  --background-color-inside: #1e2a47;
+  --box-shadow: 0;
+  --icons: #ffffff;
+  --text-theme: #ffffff;
 }

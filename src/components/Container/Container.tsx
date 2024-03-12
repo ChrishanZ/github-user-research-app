@@ -4,6 +4,9 @@ import styles from "./Container.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import Profile from "../Profile/Profile";
 
+import sun from "/assets/icon-sun.svg";
+import moon from "/assets/icon-moon.svg";
+
 interface IData {
   avatar_url: string;
   login: string;
@@ -19,7 +22,13 @@ interface IData {
   company: string;
   // Add other properties as needed
 }
-function Container() {
+function Container({
+  isDarkMode,
+  setIsDarkMode,
+}: {
+  isDarkMode: boolean;
+  setIsDarkMode: Dispatch<SetStateAction<boolean>>;
+}) {
   const [data, setData]: [
     IData | null,
     Dispatch<SetStateAction<IData | null>>
@@ -34,6 +43,15 @@ function Container() {
     <div className={styles.container}>
       <div className={styles.title}>
         <h1>devfinder</h1>
+        <div
+          className={`d-flex align-items-center ${styles.colormode}`}
+          onClick={() => {
+            setIsDarkMode(!isDarkMode);
+          }}
+        >
+          <span>{isDarkMode ? "LIGHT" : "DARK"}</span>
+          <img src={isDarkMode ? sun : moon} alt="colormode" />
+        </div>
       </div>
       <SearchBar setData={setData} setIsLoading={setIsLoading} />
       {isLoading ? (
