@@ -1,5 +1,7 @@
 import { useState, SetStateAction, Dispatch } from "react";
 
+import axios from "axios";
+
 import styles from "./Container.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import Profile from "../Profile/Profile";
@@ -22,6 +24,7 @@ interface IData {
   company: string;
   // Add other properties as needed
 }
+
 function Container({
   isDarkMode,
   setIsDarkMode,
@@ -39,6 +42,26 @@ function Container({
     Dispatch<SetStateAction<boolean>>
   ] = useState<boolean>(false);
 
+  const [errorMessage, setErrorMessage]: [
+    string,
+    Dispatch<SetStateAction<string>>
+  ] = useState("");
+
+  const searchUser = (pseudo: string) => {
+    axios
+      .get(`https://api.github.com/users/${pseudo}`)
+      .then((response) => {
+        setIsLoading(true);
+        setData(response.data);
+        setErrorMessage("");
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setErrorMessage(error.response.data.message);
+        setData(null);
+      });
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -53,7 +76,7 @@ function Container({
           <img src={isDarkMode ? sun : moon} alt="colormode" />
         </div>
       </div>
-      <SearchBar setData={setData} setIsLoading={setIsLoading} />
+      <SearchBar searchUser={searchUser} errorMessage={errorMessage} />
       {isLoading ? (
         <div
           className={`d-flex justify-content-center align-items-center ${styles.containerLoader}`}
